@@ -13,7 +13,7 @@ void espWiFi::StartAsClient(const char *ssid, const char *password, bool waitFor
   _ssid = ssid;
   _password = password;
 
-  WiFi.begin(_ssid, _password);
+  WiFi.begin(ssid, password);
   if (waitForConnection)
     WaitForConnection();
 }
@@ -32,8 +32,8 @@ void espWiFi::WaitForConnection()
 
   if (_serialIsEnabled)
   {
-    Serial.println("Done. Info:")
-    WiFi.prindDiag(Serial);   //Change this to IP only
+    Serial.println("Done. Info:");
+    WiFi.printDiag(Serial);   //Change this to IP only
   }
 }
 

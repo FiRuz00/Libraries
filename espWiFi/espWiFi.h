@@ -8,7 +8,7 @@
 class espWiFi
 {
 public:
-  espWiFi(bool serialIsEnabled);
+  espWiFi(bool serialIsEnabled=true);
 
   void StartAsClient(const char *ssid="IoT_Lab", const char *password="nopython", bool waitForConnection=true);
   void WaitForConnection();
@@ -18,7 +18,7 @@ public:
 private:
   String _ssid, _password;
   bool _serialIsEnabled;
-}
+};
 
 
 #endif
