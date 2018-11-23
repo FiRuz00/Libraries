@@ -40,25 +40,37 @@ bool Relay::IsOnTwo()
 void Relay::SetOnOne()
 {
   if (_inPinOne != NULL && !_isOnOne)
+  {
     digitalWrite(_inPinOne, _ON);
+    _isOnOne = true;
+  }
 }
 
 void Relay::SetOnTwo()
 {
   if (_inPinTwo != NULL && !_isOnTwo)
+  {
     digitalWrite(_inPinTwo, _ON);
+    _isOnTwo = true;
+  }
 }
 
 void Relay::SetOffOne()
 {
   if (_inPinOne != NULL && _isOnOne)
+  {
     digitalWrite(_inPinOne, _OFF);
+    _isOnOne = false;
+  }
 }
 
 void Relay::SetOffTwo()
 {
   if (_inPinTwo != NULL && _isOnTwo)
+  {
     digitalWrite(_inPinTwo, _OFF);
+    _isOnTwo = false;
+  }
 }
 
 void Relay::ToggleOne()
